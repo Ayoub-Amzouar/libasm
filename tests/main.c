@@ -6,11 +6,11 @@
 ** Start function prototypes
 */
 
-void	error_func(char *message);
+void			error_func(char *message);
 
-int		call_correct_test(char *first_arg);
+int				call_correct_test(char *first_arg);
 
-size_t	ft_strlen(const char *s);
+extern	size_t	ft_strlen(const char *s);
 
 /*
 ** End function prototypes
