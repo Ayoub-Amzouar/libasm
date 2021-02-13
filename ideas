@@ -2,3 +2,4 @@
 	* then complete you main.c function
 	* if the .c files annoying you, you can hide them with . lol
 2) delete everything that is unnecessary for the project before pushing in 1337
+3) organize your work with headers in a directory and srcs in a directory and such things

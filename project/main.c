@@ -4,29 +4,31 @@
 		or all of them using '*'
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libasm.h"
 
-void			error_func(char *message);
-int				call_correct_test(char *first_arg);
-extern	size_t	ft_strlen(const char *s);
-int				ft_strlen_test(void);
+/*
+** Framework functions
+*/
 
-int		main(int ac, char *av[])
+void	error_func(char	*message)
 {
-	int		ret;
-
-	ret = 0;
-	if (ac != 2)
-		error_func("wrong number of arrguments");
-	ret = call_correct_test(av[1]);
-	return (ret);
+	printf("Error: %s\n", message);
+	exit(0);
 }
 
 /*
 ** Test functions
 */
+
+int		ft_strlen_test(void)
+{
+	int		ret = 0;
+	// colorize the tests please, but not now !!
+
+	printf("test: 'Hello World!' \nresult: %ld\n", ft_strlen("Hello World!"));
+
+	return (ret);
+}
 
 int		call_correct_test(char *first_arg)
 {
@@ -44,22 +46,13 @@ int		call_correct_test(char *first_arg)
 	return(ret);
 }
 
-int		ft_strlen_test(void)
+int		main(int ac, char *av[])
 {
-	int		ret = 0;
-	// colorize the tests please, but not now !!
+	int		ret;
 
-	printf("test: 'Hello World!' \nresult: %ld\n", ft_strlen("Hello World!"));
-
+	ret = 0;
+	if (ac != 2)
+		error_func("wrong number of arrguments");
+	ret = call_correct_test(av[1]);
 	return (ret);
-}
-
-/*
-** Framework functions
-*/
-
-void	error_func(char	*message)
-{
-	printf("Error: %s\n", message);
-	exit(0);
 }
