@@ -1,26 +1,15 @@
-		global		_start
-		extern		_printf
+		global		_ft_strlen
 
 		section		.text
 
-_start:
-mov rax, 0
+_ft_strlen:
+	xor rax, 0
 
 loop:
-	cmp byte [message + rax], 0
-	je print
+	cmp byte [rdi + rax], 0
+	je return_value
 	inc rax
 	jmp loop
 
-print:
-	push rax
-	mov rdi, format
-	mov rsi, message
-	mov rdx, rax
-	call _printf
-	pop rax
+return_value:
 	ret
-
-		section		.data
-message:	dq		"Hello World!", 0
-format:		dq		"length of [%s] is %ld characters\n", 0

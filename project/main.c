@@ -1,20 +1,17 @@
+/*
+	1. the program should take arrguments
+		for example, the test of a specific function
+		or all of them using '*'
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-/*
-** Start function prototypes
-*/
-
 void			error_func(char *message);
-
 int				call_correct_test(char *first_arg);
-
 extern	size_t	ft_strlen(const char *s);
-
-/*
-** End function prototypes
-*/
+int				ft_strlen_test(void);
 
 int		main(int ac, char *av[])
 {
