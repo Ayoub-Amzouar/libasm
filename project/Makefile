@@ -20,12 +20,12 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 GCC: $(HEADER)
-	gcc main.c -L. -lasm $(NAME) -fsanitize=address -o libasm
+	gcc main.c $(NAME) -o libasm
 
 clean:
 	rm -f $(OBJ) main.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) libasm
 
 re: fclean all

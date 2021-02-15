@@ -1,34 +1,23 @@
 	section		.text
 	global		ft_strcmp
 
-; rcx: i 
-; r8: j
 ; rdi: s1
 ; rsi: s2
 
 ft_strcmp:
-	xor rcx, rcx
-	xor r8, r8
-
-cmp_s1:
-	cmp byte [rdi + rcx], 0
+	mov al, byte [rdi]
+	mov cl, byte [rsi]
+	cmp al, 0
 	je return_value
-	mov al, byte [rdi + rcx]
-	cmp al, byte [rsi + r8]
-	jne return_value
-	inc rcx
-	jmp cmp_s2
-
-cmp_s2:
-	cmp byte [rsi + r8], 0
+	cmp cl, 0
 	je return_value
-	mov al, byte [rsi + r8]
-	cmp al, byte [rdi + rcx]
+	inc rdi
+	inc rsi
+	cmp al, cl
 	jne return_value
-	inc r8
-	jmp cmp_s1
+	jmp ft_strcmp
 
 return_value:
-	mov rax, [rdi + rcx*8]
-	sub rax, [rsi + r8*8]
+	xor rax, rax
+	mov rax, rbx
 	ret
