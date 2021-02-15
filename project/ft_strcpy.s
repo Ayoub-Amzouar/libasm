@@ -1,18 +1,18 @@
-	section		.text
-	global		_ft_strcpy
+		section		.text
+		global		ft_strcpy
 
-_ft_strcpy:
-	xor r0, r0
-	mov rax, rdi
+ft_strcpy:
+	xor rcx, rcx
 
 copying:
-	cmp byte [rsi + r0], 0
-	je exit
-	mov al, byte [rsi + r0]
-	mov byte [rdi + r0], al
-	inc r0
+	cmp byte [rsi + rcx], 0
+	je return_value
+	mov al, byte [rsi + rcx]
+	mov byte [rdi + rcx], al
+	inc rcx
 	jmp copying
 
-exit:
-	mov byte [rsi + r0], 0
+return_value:
+	mov byte [rdi + rcx], 0
+	mov rax, rdi
 	ret

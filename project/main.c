@@ -30,6 +30,16 @@ int		ft_strlen_test(void)
 	return (ret);
 }
 
+int		ft_strcpy_test(void)
+{
+	int		ret = 0;
+	char	dst[13];
+
+	printf("test: 'Hello World!' \nresult: %s\n", ft_strcpy(dst, "Hello World!"));
+	printf("test: 'Hello World!' \nresult: %s\n", dst);
+	return (ret);
+}
+
 int		call_correct_test(char *first_arg)
 {
 	int		ret;
@@ -41,6 +51,8 @@ int		call_correct_test(char *first_arg)
 		0;
 	else if (!strcmp("ft_strlen", first_arg))
 		ret = ft_strlen_test();
+	else if (!strcmp("ft_strcpy", first_arg))
+		ret = ft_strcpy_test();
 	else
 		ret = 1;
 	return(ret);
