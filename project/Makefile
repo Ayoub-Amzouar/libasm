@@ -3,9 +3,9 @@ NAME = libasm.a
 
 HEADER = libasm.h
 
-SRC = ft_strcpy.s ft_strlen.s ft_strcmp.s ft_write.s
+SRC = ft_strcpy.s ft_strlen.s ft_strcmp.s ft_write.s ft_read.s
 
-OBJ = ft_strcpy.o ft_strlen.o ft_strcmp.o ft_write.o
+OBJ = ft_strcpy.o ft_strlen.o ft_strcmp.o ft_write.o ft_read.o
 #BONUS=
 
 all: NASM $(NAME) GCC clean
@@ -15,6 +15,7 @@ NASM: $(SRC)
 	nasm -fmacho64 ft_strlen.s
 	nasm -fmacho64 ft_strcmp.s
 	nasm -fmacho64 ft_write.s
+	nasm -fmacho64 ft_read.s
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)

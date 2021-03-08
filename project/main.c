@@ -66,8 +66,19 @@ int		ft_write_test(void)
 {
 	int ret = 0;
 
+	// check errno too
 	printf("test: %ld\n", ft_write(1, "Hello Ayoubff!\n", 15));
 	printf("origin: %ld\n", write(1, "Hello Ayoubff!\n", 15));
+	return (ret);
+}
+
+int		ft_read_test(void)
+{
+	int 	ret = 0;
+	char	buff[15];
+
+	printf("test: %ld\n", ft_read(0, buff, 12));
+	printf("origin: %ld\n", read(0, buff, 12));
 	return (ret);
 }
 
@@ -88,6 +99,8 @@ int		call_correct_test(char *first_arg)
 		ret = ft_strcmp_test();
 	else if (!strcmp("ft_write", first_arg))
 		ret = ft_write_test();
+	else if (!strcmp("ft_read", first_arg))
+		ret = ft_read_test();
 	else
 		ret = 1;
 	return(ret);
