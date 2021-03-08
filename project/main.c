@@ -56,8 +56,8 @@ int		ft_strcmp_test(void)
 {
 	int ret = 0;
 
-	printf("test: 'Hello World!' \nresult: %d\n", ft_strcmp("Hello World", "Hello World!"));
-	printf("origin: 'Hello World!' \nresult: %d\n", strcmp("Hello World", "Hello World!"));
+	printf("test: 'Hello World!' \nresult: %d\n", ft_strcmp("!d", "!"));
+	printf("origin: 'Hello World!' \nresult: %d\n", strcmp("!d", "!"));
 	return (ret);
 }
 

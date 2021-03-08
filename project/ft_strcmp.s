@@ -5,6 +5,7 @@
 ; rsi: s2
 
 _ft_strcmp:
+	xor rax, rax
 	mov al, byte [rdi]
 	mov cl, byte [rsi]
 	cmp al, 0
@@ -18,5 +19,5 @@ _ft_strcmp:
 	jmp _ft_strcmp
 
 return_value:
-	sub al, cl
+	sub eax, ecx
 	ret
