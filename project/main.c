@@ -14,6 +14,7 @@
 	1. the program should take arrguments
 		for example, the test of a specific function
 		or all of them using '*'
+	2. add a flag for bonuses
 */
 
 #include "libasm.h"
@@ -61,6 +62,15 @@ int		ft_strcmp_test(void)
 	return (ret);
 }
 
+int		ft_write_test(void)
+{
+	int ret = 0;
+
+	printf("test: %ld\n", ft_write(1, "Hello Ayoubff!\n", 15));
+	printf("origin: %ld\n", write(1, "Hello Ayoubff!\n", 15));
+	return (ret);
+}
+
 int		call_correct_test(char *first_arg)
 {
 	int		ret;
@@ -76,6 +86,8 @@ int		call_correct_test(char *first_arg)
 		ret = ft_strcpy_test();
 	else if (!strcmp("ft_strcmp", first_arg))
 		ret = ft_strcmp_test();
+	else if (!strcmp("ft_write", first_arg))
+		ret = ft_write_test();
 	else
 		ret = 1;
 	return(ret);
