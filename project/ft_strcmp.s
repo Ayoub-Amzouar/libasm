@@ -18,6 +18,5 @@ _ft_strcmp:
 	jmp _ft_strcmp
 
 return_value:
-	xor rax, rax
-	mov rax, rbx
+	sub al, cl
 	ret
