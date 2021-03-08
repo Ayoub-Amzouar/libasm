@@ -1,10 +1,10 @@
 	section		.text
-	global		ft_strcmp
+	global		_ft_strcmp
 
 ; rdi: s1
 ; rsi: s2
 
-ft_strcmp:
+_ft_strcmp:
 	mov al, byte [rdi]
 	mov cl, byte [rsi]
 	cmp al, 0
@@ -15,7 +15,7 @@ ft_strcmp:
 	inc rsi
 	cmp al, cl
 	jne return_value
-	jmp ft_strcmp
+	jmp _ft_strcmp
 
 return_value:
 	xor rax, rax

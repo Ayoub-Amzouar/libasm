@@ -37,7 +37,7 @@ int		ft_strlen_test(void)
 	int		ret = 0;
 	// colorize the tests please, but not now !!
 
-	printf("test: 'Hello World!' \nresult: %ld\n", ft_strlen("Hello World!"));
+	printf("test: 'Hello World!' \nexpected: %ld\nresult: %ld\n", strlen("Hello World!"), ft_strlen("Hello World!"));
 
 	return (ret);
 }
@@ -69,7 +69,7 @@ int		call_correct_test(char *first_arg)
 
 	if (!strcmp("*", first_arg))
 		// ret = call_all_test_functions();
-		0;
+		return (0);
 	else if (!strcmp("ft_strlen", first_arg))
 		ret = ft_strlen_test();
 	else if (!strcmp("ft_strcpy", first_arg))

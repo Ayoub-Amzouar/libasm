@@ -11,9 +11,9 @@ OBJ = ft_strcpy.o ft_strlen.o ft_strcmp.o
 all: NASM $(NAME) GCC clean
 
 NASM: $(SRC)
-	nasm -felf64 ft_strcpy.s
-	nasm -felf64 ft_strlen.s
-	nasm -felf64 ft_strcmp.s
+	nasm -fmacho64 ft_strcpy.s
+	nasm -fmacho64 ft_strlen.s
+	nasm -fmacho64 ft_strcmp.s
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
