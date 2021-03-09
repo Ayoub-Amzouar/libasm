@@ -36,9 +36,12 @@ void	error_func(char	*message)
 int		ft_strlen_test(void)
 {
 	int		ret = 0;
-	// colorize the tests please, but not now !!
+	
+	printf("##### ft_strlen #####\n\n");
 
-	printf("test: 'Hello World!' \nexpected: %ld\nresult: %ld\n", strlen("Hello World!"), ft_strlen("Hello World!"));
+	printf("test: 'Hello World!'\n%sexpected: %ld\n%sresult: %ld%s\n\n", green, strlen("Hello World!"), yellow, ft_strlen("Hello World!"), reset);
+	printf("test: 'Future Is Loading'\n%sexpected: %ld\n%sresult: %ld%s\n\n", green, strlen("Future Is Loading"), yellow, ft_strlen("Future Is Loading"), reset);
+	printf("test: '1337'\n%sexpected: %ld\n%sresult: %ld%s\n", green, strlen("1337"), yellow, ft_strlen("1337"), reset);
 
 	return (ret);
 }
@@ -46,10 +49,13 @@ int		ft_strlen_test(void)
 int		ft_strcpy_test(void)
 {
 	int		ret = 0;
-	char	dst[13];
+	char	dst[17];
+	
+	printf("##### ft_strcpy #####\n\n");
 
-	printf("test: 'Hello World!' \nresult: %s\n", ft_strcpy(dst, "Hello World!"));
-	printf("test: 'Hello World!' \nresult: %s\n", dst);
+	printf("test: 'Winter Is Coming' \n%sexpected %s\n%sresult: %s%s\n\n", green, strcpy(dst, "Winter Is Coming"), red, ft_strcpy(dst, "Winter Is Coming"), reset);
+	printf("test: 'Winter Is Fallin' \n%sexpected %s\n%sresult: %s%s\n\n", green, strcpy(dst, "Winter Is Fallin"), red, ft_strcpy(dst, "Winter Is Fallin"), reset);
+	printf("test: 'Winter vs Summer' \n%sexpected %s\n%sresult: %s%s\n\n", green, strcpy(dst, "Winter vs Summer"), red, ft_strcpy(dst, "Winter vs Summer"), reset);
 	return (ret);
 }
 
