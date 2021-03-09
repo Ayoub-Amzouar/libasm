@@ -8,7 +8,8 @@ typedef struct	s_list
 	struct s_list   *next;
 }				t_list;
 
-t_list	*ft_list_push_front(t_list **head, void *data);
+void	ft_list_push_front(t_list **head, void *data);
+int		ft_list_size(t_list *head);
 
 t_list	*ft_create_elem(void *data)
 {
@@ -41,20 +42,25 @@ void    initialize_linked_list(t_list **head)
 
 void    print_linked_list(t_list *head)
 {
-	while (head != NULL)
+	t_list *tmp;
+
+	tmp = head;
+	while (tmp != NULL)
 	{
-		printf("data: %s\n", head->data);
-		head = head->next;
+		printf("data: %s\n", tmp->data);
+		tmp = tmp->next;
 	}
 }
 
 int main()
 {
 	t_list	*head;
-	
+	int		len;
+
 	initialize_linked_list(&head);
 	ft_list_push_front(&head, "Hello");
 	ft_list_push_front(&head, "Ayoub");
 	print_linked_list(head);
+	printf("len: %d\n", ft_list_size(head));
 	return (0);
 }
