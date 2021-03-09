@@ -82,6 +82,17 @@ int		ft_read_test(void)
 	return (ret);
 }
 
+int		ft_strdup_test(void)
+{
+	int 	ret = 0;
+	char	*buff;
+
+	buff = ft_strdup("Hello Everybody this is Hardwell");
+	printf("test: %s\n", buff);
+	free(buff);
+	return (ret);
+}
+
 int		call_correct_test(char *first_arg)
 {
 	int		ret;
@@ -101,6 +112,8 @@ int		call_correct_test(char *first_arg)
 		ret = ft_write_test();
 	else if (!strcmp("ft_read", first_arg))
 		ret = ft_read_test();
+	else if (!strcmp("ft_strdup", first_arg))
+		ret = ft_strdup_test();
 	else
 		ret = 1;
 	return(ret);
