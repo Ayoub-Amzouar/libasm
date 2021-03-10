@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <string.h> // remove strcmp, and use instead ft_strcmp
 #include <stdlib.h>
 
 typedef struct	s_list
@@ -10,6 +10,7 @@ typedef struct	s_list
 
 void	ft_list_push_front(t_list **head, void *data);
 int		ft_list_size(t_list *head);
+void	ft_list_sort(t_list **head, int (*cmp)());
 
 t_list	*ft_create_elem(void *data)
 {
@@ -52,16 +53,28 @@ void    print_linked_list(t_list *head)
 	}
 }
 
-void	test_size(t_list *head)
+void	list_sort(t_list **head, int (*cmp)())
 {
-	int		i = 0;
+	void	*tmp;
+	t_list	*list;
+	t_list	*list2;
 
-	while (head != NULL)
+	list = *head;
+	while (list != NULL)
 	{
-		head = head->next;
-		i++;
+		list2 = list->next;
+		while (list2 != NULL)
+		{
+			if ((*cmp)(list->data, list2->data) > 0)
+			{
+				tmp = list->data;
+				list->data = list2->data;
+				list2->data = tmp;
+			}
+			list2 = list2->next;
+		}
+		list = list->next;
 	}
-	printf("%d\n", i);
 }
 
 int main()
@@ -70,10 +83,13 @@ int main()
 	int		len;
 
 	initialize_linked_list(&head);
-	ft_list_push_front(&head, "Hello");
-	ft_list_push_front(&head, "Ayoub");
+	ft_list_push_front(&head, "Z");
+	ft_list_push_front(&head, "B");
+	ft_list_push_front(&head, "A");
+	ft_list_push_front(&head, "C");
+	// print_linked_list(head);
+	ft_list_sort(&head, &strcmp);
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
-	// test_size(head);
 	return (0);
 }
