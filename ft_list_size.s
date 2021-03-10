@@ -10,6 +10,7 @@ looping:
 	je return_value
 	mov rdi, qword [rdi+8]
 	inc rax
+	jmp looping
 
 return_value:
 	ret

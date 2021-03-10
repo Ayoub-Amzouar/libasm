@@ -52,6 +52,18 @@ void    print_linked_list(t_list *head)
 	}
 }
 
+void	test_size(t_list *head)
+{
+	int		i = 0;
+
+	while (head != NULL)
+	{
+		head = head->next;
+		i++;
+	}
+	printf("%d\n", i);
+}
+
 int main()
 {
 	t_list	*head;
@@ -62,5 +74,6 @@ int main()
 	ft_list_push_front(&head, "Ayoub");
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
+	// test_size(head);
 	return (0);
 }
