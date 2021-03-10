@@ -1,0 +1,19 @@
+#ifndef LIBASM_BONUS_H
+#define LIBASM_BONUS_H
+
+#include <stdio.h>
+#include <string.h> // remove strcmp, and use instead ft_strcmp
+#include <stdlib.h>
+
+typedef struct	s_list 
+ {
+	void            *data;
+	struct s_list   *next;
+}				t_list;
+
+void	ft_list_push_front(t_list **head, void *data);
+int		ft_list_size(t_list *head);
+void	ft_list_sort(t_list **head, int (*cmp)());
+int		compare(t_list **head, int (*cmp)());
+
+#endif
