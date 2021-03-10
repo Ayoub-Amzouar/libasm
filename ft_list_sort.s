@@ -26,7 +26,7 @@ loop2:
 	mov rdi, qword [rdi]
 	mov rsi, qword [rcx]
 	call rdx
-	cmp rax, 1
+	cmp rax, 1 ; 1 - 1=0,	-1 - 1=-2,	0 - 1=1
 	pop rdx
 	pop rcx
 	pop rdi
