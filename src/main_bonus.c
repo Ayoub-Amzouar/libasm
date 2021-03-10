@@ -1,4 +1,16 @@
-#include <../libasm_bonus.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aamzouar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 18:02:06 by aamzouar          #+#    #+#             */
+/*   Updated: 2021/03/10 18:02:07 by aamzouar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../headers/libasm_bonus.h"
 
 t_list	*ft_create_elem(void *data)
 {
@@ -73,11 +85,10 @@ int main()
 	initialize_linked_list(&head);
 	ft_list_push_front(&head, "Z");
 	ft_list_push_front(&head, "B");
-	ft_list_push_front(&head, "C");
 	ft_list_push_front(&head, "A");
+	ft_list_push_front(&head, "C");
 	// print_linked_list(head);
-	ft_list_sort(&head, &strcmp);
-	printf("%d\n", compare(&head, &strcmp));
+	ft_list_sort(&head, &ft_strcmp);
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
 	return (0);

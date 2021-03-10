@@ -17,7 +17,7 @@
 	2. add a flag for bonuses
 */
 
-#include "libasm.h"
+#include "../headers/libasm.h"
 
 /*
 ** Framework functions

@@ -21,4 +21,16 @@ _ft_strcmp:
 
 return_value:
 	sub eax, ecx
+	cmp eax, 0
+	jg return_great
+	cmp eax, 0
+	jl return_great
+	ret
+
+return_great:
+	mov rax, 1
+	ret
+
+return_less:
+	mov rax, -1
 	ret
