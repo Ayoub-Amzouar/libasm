@@ -11,6 +11,7 @@ typedef struct	s_list
 void	ft_list_push_front(t_list **head, void *data);
 int		ft_list_size(t_list *head);
 void	ft_list_sort(t_list **head, int (*cmp)());
+int		compare(t_list **head, int (*cmp)());
 
 t_list	*ft_create_elem(void *data)
 {
@@ -85,10 +86,11 @@ int main()
 	initialize_linked_list(&head);
 	ft_list_push_front(&head, "Z");
 	ft_list_push_front(&head, "B");
-	ft_list_push_front(&head, "A");
 	ft_list_push_front(&head, "C");
+	ft_list_push_front(&head, "A");
 	// print_linked_list(head);
 	ft_list_sort(&head, &strcmp);
+	printf("%d\n", compare(&head, &strcmp));
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
 	return (0);
