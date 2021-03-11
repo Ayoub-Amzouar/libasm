@@ -3,7 +3,7 @@
 
 	global	_ft_list_push_front
 
-; create a function that creates an element of linked list
+
 
 _ft_list_push_front:
 	push rdi
