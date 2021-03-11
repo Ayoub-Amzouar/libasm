@@ -88,7 +88,7 @@ int main()
 	ft_list_push_front(&head, "A");
 	ft_list_push_front(&head, "C");
 	// print_linked_list(head);
-	ft_list_sort(&head, &ft_strcmp);
+	//ft_list_sort(&head, &ft_strcmp);
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
 	return (0);
