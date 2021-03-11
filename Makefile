@@ -7,21 +7,19 @@ OBJ = src/ft_strcpy.o src/ft_strlen.o src/ft_strcmp.o src/ft_write.o src/ft_read
 BONUS_SRC = src/ft_list_push_front_bonus.s src/ft_list_size_bonus.s
 BONUS_OBJ = src/ft_list_push_front_bonus.o src/ft_list_size_bonus.o
 
-all: NASM $(NAME) GCC clean
+all: $(NAME)
 
 NASM: $(SRC)
+
+$(NAME): $(SRC)
 	nasm -fmacho64 src/ft_strcpy.s
 	nasm -fmacho64 src/ft_strlen.s
 	nasm -fmacho64 src/ft_strcmp.s
 	nasm -fmacho64 src/ft_write.s
 	nasm -fmacho64 src/ft_read.s
 	nasm -fmacho64 src/ft_strdup.s
-
-$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-
-GCC:
 	gcc src/main.c $(NAME) -o libasm
 
 clean:
