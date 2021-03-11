@@ -13,5 +13,6 @@ typedef struct	s_list
 
 void	ft_list_push_front(t_list **head, void *data);
 int		ft_list_size(t_list *head);
+void	ft_list_sort(t_list **head, int(*cmp)());
 
 #endif

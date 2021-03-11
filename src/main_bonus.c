@@ -60,6 +60,7 @@ int		main()
 	ft_list_push_front(&head, "B");
 	ft_list_push_front(&head, "A");
 	ft_list_push_front(&head, "C");
+	ft_list_sort(&head, &strcmp);
 	print_linked_list(head);
 	printf("len: %d\n", ft_list_size(head));
 	return (0);
