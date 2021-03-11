@@ -112,6 +112,47 @@ int		ft_strdup_test(void)
 	return (ret);
 }
 
+void	test_null(void)
+{
+	char	dst[100];
+
+	// ft_strlen null test
+		// ft_strlen(NULL);
+		// strlen(NULL);
+	
+	// ft_strcpy null test
+		// ft_strcpy(dst, NULL);
+		// ft_strcpy(NULL, "HI");
+		// ft_strcpy(NULL, NULL);
+		// strcpy(dst, NULL);
+		// strcpy(NULL, "HI");
+		// strcpy(NULL, NULL);
+	
+	// ft_strcmp null test
+		// ft_strcmp(NULL, "HI");
+		// ft_strcmp("HI", NULL);
+		// ft_strcmp(NULL, NULL);
+		// strcmp(NULL, "HI");
+		// strcmp("HI", NULL);
+		// strcmp(NULL, NULL);
+	
+	// ft_write null test
+		// ft_write(1, NULL, 1);
+		// printf("%d\n", errno);
+		// write(1, NULL, 1);
+		// printf("%d\n", errno);
+	
+	// ft_read null test
+		// ft_read(0, NULL, 1);
+		// printf("%d\n", errno);
+		// read(0, NULL, 1);
+		// printf("%d\n", errno);
+	
+	// ft_strdup null test
+		// ft_strdup(NULL);
+		// strdup(NULL);
+}
+
 int		call_correct_test(char *first_arg)
 {
 	int		ret;
@@ -130,6 +171,8 @@ int		call_correct_test(char *first_arg)
 		ret = ft_read_test();
 	else if (!strcmp("ft_strdup", first_arg))
 		ret = ft_strdup_test();
+	else if (!strcmp("null", first_arg))
+		test_null();
 	else
 		ret = 1;
 	return(ret);

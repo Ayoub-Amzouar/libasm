@@ -2,7 +2,6 @@
 	extern _malloc
 	extern _ft_strcpy
 	extern _ft_strlen
-	extern ___error
 
 	global _ft_strdup
 
@@ -19,8 +18,5 @@ _ft_strdup:
 	ret
 
 return_value:
-	push rax
-	call ___error
-	pop qword [rax]
 	mov rax, 0
 	ret
