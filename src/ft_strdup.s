@@ -11,7 +11,7 @@ _ft_strdup:
 	mov rdi, rax
 	inc rdi
 	call _malloc
-	jc return_value
+	jz return_value
 	pop rsi
 	mov rdi, rax
 	call _ft_strcpy
