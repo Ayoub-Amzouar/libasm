@@ -43,13 +43,10 @@ void    initialize_linked_list(t_list **head)
 
 void    print_linked_list(t_list *head)
 {
-	t_list *tmp;
-
-	tmp = head;
-	while (tmp != NULL)
+	while (head != NULL)
 	{
-		printf("data: %s\n", tmp->data);
-		tmp = tmp->next;
+		printf("data: %s\n", head->data);
+		head = head->next;
 	}
 }
 
