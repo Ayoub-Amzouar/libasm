@@ -35,7 +35,7 @@ re: fclean all
 bonus: fclean $(BONUS_SRC)
 	nasm -fmacho64 src/ft_list_push_front_bonus.s
 	nasm -fmacho64 src/ft_list_size_bonus.s
-	ar rc $(NAME) $(BONUS_OBJ) $(OBJ)
+	ar rc $(NAME) $(BONUS_OBJ)
 	ranlib $(NAME)
 	gcc src/main_bonus.c $(NAME) -o libasm_bonus
 	rm -f $(BONUS_OBJ)
