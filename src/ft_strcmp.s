@@ -24,7 +24,7 @@ return_value:
 	cmp eax, 0
 	jg return_great
 	cmp eax, 0
-	jl return_great
+	jl return_less
 	ret
 
 return_great:

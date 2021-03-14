@@ -1,4 +1,5 @@
 	section .text
+	extern ___error
 	extern _malloc
 	extern _ft_strcpy
 	extern _ft_strlen
@@ -11,12 +12,15 @@ _ft_strdup:
 	mov rdi, rax
 	inc rdi
 	call _malloc
-	jz return_value
+	jc return_value
 	pop rsi
 	mov rdi, rax
 	call _ft_strcpy
 	ret
 
 return_value:
+	push rax
+	call ___error
+	pop qword [rax]
 	mov rax, 0
 	ret
