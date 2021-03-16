@@ -30,7 +30,7 @@ int		ft_strlen_test(void)
 {
 	int		ret = 0;
 	
-	printf("%s##### ft_strlen #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_strlen ----------------------------------\n");
 
 	printf("test: 'Hello World!'\n%sexpected: %ld\n%sresult: %ld%s\n\n", green, strlen("Hello World!"), red, ft_strlen("Hello World!"), reset);
 	printf("test: 'Future Is Loading'\n%sexpected: %ld\n%sresult: %ld%s\n\n", green, strlen("Future Is Loading"), red, ft_strlen("Future Is Loading"), reset);
@@ -44,7 +44,7 @@ int		ft_strcpy_test(void)
 	int		ret = 0;
 	char	dst[17];
 	
-	printf("%s##### ft_strcpy #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_strcpy ----------------------------------\n");
 
 	printf("test: 'Winter Is Coming' \n%sexpected: [%s]\n%sresult: [%s]%s\n\n", green, strcpy(dst, "Winter Is Coming"), red, ft_strcpy(dst, "Winter Is Coming"), reset);
 	printf("test: 'Winter Is Fallin' \n%sexpected: [%s]\n%sresult: [%s]%s\n\n", green, strcpy(dst, "Winter Is Fallin"), red, ft_strcpy(dst, "Winter Is Fallin"), reset);
@@ -56,7 +56,7 @@ int		ft_strcmp_test(void)
 {
 	int ret = 0;
 
-	printf("%s##### ft_strcmp #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_strcmp ----------------------------------\n");
 	
 	printf("test: 'ft_strcmp, strcmp' \n%sexpected: %d\n%sresult: %d%s\n\n", green, strcmp("ft_strcmp", "strcmp"), red, ft_strcmp("ft_strcmp", "strcmp"), reset);
 	printf("test: 'Hunter, Hunter' \n%sexpected: %d\n%sresult: %d%s\n\n", green, strcmp("Hunter", "Hunter"), red, ft_strcmp("Hunter", "Hunter"), reset);
@@ -68,7 +68,7 @@ int		ft_write_test(void)
 {
 	int ret = 0;
 
-	printf("%s##### ft_write #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_write ----------------------------------\n");
 	
 	printf("test: 'Hi u corrector!!'\n");
 	printf("%sexpected: %ld%s\n", green, write(1, "Hi u corrector!!\n", 18), reset);
@@ -86,7 +86,7 @@ int		ft_read_test(void)
 
 	buff[12] = '\0';
 	fd = open("src/main.c", O_RDONLY);	
-	printf("%s##### ft_read #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_read ----------------------------------\n");
 
 	printf("test: 'Read From main.c' \n%sexpected: %ld * '%s'%s\n", green, read(fd, buff, 12), buff, reset);
 	printf("%sresult: %ld * '%s'%s\n\n", red, ft_read(fd, buff, 12), buff, reset);
@@ -101,7 +101,7 @@ int		ft_strdup_test(void)
 	int 	ret = 0;
 	char	*buff;
 	
-	printf("%s##### ft_strdup #####\n%s", yellow, reset);
+	printf("---------------------------------- ft_strdup ----------------------------------\n");
 
 	buff = strdup("Yo everbody f_ckin jump!!!");
 	printf("%sexpected: %s%s\n", green, buff, reset);
@@ -159,22 +159,17 @@ int		call_correct_test(char *first_arg)
 
 	ret = 0;
 
-	if (!strcmp("ft_strlen", first_arg))
-		ret = ft_strlen_test();
-	else if (!strcmp("ft_strcpy", first_arg))
-		ret = ft_strcpy_test();
-	else if (!strcmp("ft_strcmp", first_arg))
-		ret = ft_strcmp_test();
-	else if (!strcmp("ft_write", first_arg))
-		ret = ft_write_test();
-	else if (!strcmp("ft_read", first_arg))
-		ret = ft_read_test();
-	else if (!strcmp("ft_strdup", first_arg))
-		ret = ft_strdup_test();
-	else if (!strcmp("null", first_arg))
+	if (!strcmp("null", first_arg))
 		test_null();
 	else
-		ret = 1;
+	{
+		ret = ft_strlen_test();
+		ret = ft_strcpy_test();
+		ret = ft_strcmp_test();
+		ret = ft_write_test();
+		ret = ft_read_test();
+		ret = ft_strdup_test();
+	}
 	return(ret);
 }
 
@@ -183,6 +178,7 @@ int		main(int ac, char *av[])
 	int		ret;
 
 	ret = 0;
+	printf("%d\n", ac);
 	if (ac != 2)
 		error_func("wrong number of arrguments");
 	ret = call_correct_test(av[1]);
