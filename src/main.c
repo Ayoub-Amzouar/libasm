@@ -178,7 +178,6 @@ int		main(int ac, char *av[])
 	int		ret;
 
 	ret = 0;
-	printf("%d\n", ac);
 	if (ac != 2)
 		error_func("wrong number of arrguments");
 	ret = call_correct_test(av[1]);
