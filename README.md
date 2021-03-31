@@ -1,7 +1,7 @@
 # libasm
 My school project called libasm, its goal is to learn the basics of assembly with writing some basic functions
 
-![](screenShot.jpg)
+![](screenShot.png)
 
 ## Resources
 
