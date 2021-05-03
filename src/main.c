@@ -6,7 +6,7 @@
 /*   By: aamzouar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 10:38:18 by aamzouar          #+#    #+#             */
-/*   Updated: 2021/03/11 17:07:48 by aamzouar         ###   ########.fr       */
+/*   Updated: 2021/05/03 17:16:24 by aamzouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,10 @@ int		ft_strdup_test(void)
 	
 	printf("---------------------------------- ft_strdup ----------------------------------\n");
 
-	buff = strdup("Yo everbody f_ckin jump!!!");
+	buff = strdup("1337 Future is Loading");
 	printf("%sexpected: %s%s\n", green, buff, reset);
 	free(buff);
-	buff = ft_strdup("Yo everbody f_ckin jump!!!");
+	buff = ft_strdup("1337 Future is Loading");
 	printf("%sresult: %s%s\n", red, buff, reset);
 	free(buff);
 	return (ret);
